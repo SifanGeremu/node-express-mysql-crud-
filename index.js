@@ -26,9 +26,9 @@ app.get("/", (req, res) => {
 
     console.log(`Connected as ID ${connection.threadId}`);
 
-    // Execute SQL query
+    
     connection.query("SELECT * FROM beers", (queryErr, rows) => {
-      connection.release(); // Release connection
+      connection.release(); 
 
       if (queryErr) {
         console.error("Error executing query:", queryErr);
@@ -39,6 +39,7 @@ app.get("/", (req, res) => {
     });
   });
 });
+
 
 
 app.listen(PORT, () => {
